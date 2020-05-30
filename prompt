@@ -1,0 +1,4 @@
+#! /bin/bash
+# Receives a prompt $1 and executes a command $2
+[ $(echo -e "No\nYes" | dmenu -nb \#000000 -sb \#101010 -fn "$FONT" -b -i -p "$1") == "Yes" ] && $2
+

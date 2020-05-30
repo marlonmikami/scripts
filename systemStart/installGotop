@@ -1,0 +1,8 @@
+#! /bin/bash
+
+# install gotop
+mkdir -p $HOME/.local/bin
+cd $HOME/.local/bin
+wget https://github.com/xxxserxxx/gotop/releases/download/v3.5.2/gotop_v3.5.2_linux_amd64.tgz -O $HOME/.local/bin/gotop.tgz
+tar -xvzf $HOME/.local/bin/gotop.tgz
+rm $HOME/.local/bin/gotop.tgz

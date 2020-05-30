@@ -1,0 +1,15 @@
+#! /bin/bash
+
+#[ $(echo -e "Power Off\nReboot\nLog Off" | dmenu -nb \#000000 -sb \#101010 -fn "$FONT" -b -i -p "Which action to take?")]
+
+case $(echo -e "Power Off\nReboot\nLog Off" | dmenu -nb \#000000 -sb \#101010 -fn "$FONT" -b -i -p "Which action to take?") in
+  "Power Off")
+    sh $HOME/.scripts/poweroff
+    ;;
+  "Reboot")
+    sh $HOME/.scripts/reboot
+    ;;
+  "Log Off")
+    sh $HOME/.scripts/logoff
+    ;;
+esac

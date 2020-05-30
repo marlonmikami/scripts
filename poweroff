@@ -1,0 +1,3 @@
+#! /bin/bash
+
+$HOME/.scripts/prompt "Do you want to power off the computer?" "sudo poweroff"

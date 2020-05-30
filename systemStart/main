@@ -1,0 +1,57 @@
+#! /bin/bash
+
+mkdir -p ~/.local/bin
+mkdir Test
+
+#sudo apt-get install -y build-essential calcurse chocolate-doom cmatrix compton dmenu dtrx feh firefox-esr gawk groff leafpad libpulse-dev make ncdu neovim pulseaudio ranger rxvt-unicode-256color stow sxiv trash-cli ttf-mscorefonts-installer tty-clock xorg zathura zathura-djvu zathura-pdf-poppler
+
+# install trans (translator)
+cd ~/.local/bin/
+wget git.io/trans
+chmod +x ./trans
+ 
+# install gotop
+./installGotop
+
+# install youtube-dl
+./installYoutube-dl
+
+# install polybar
+#cd ~/Test
+#wget https://github.com/polybar/polybar/releases/download/3.4.0/polybar-3.4.0.tar
+#dtrx polybar-3.4.0.tar
+#cd polybar
+#mkdir build
+#cd build
+#cmake ..
+#make -j$(nproc)
+#sudo make install
+#sudo apt-get install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev libxcb-composite0-dev xcb libxcb-ewmh2
+
+# install youtube viewer
+#cd ~/Test
+#sudo apt-get install libterm-readline-gnu-perl
+#git clone https://github.com/trizen/youtube-viewer.git
+#cd youtube-viewer
+#sudo cpan Module::Build
+#perl Build.PL
+#sudo ./Build installdeps
+#sudo ./Build install
+#cd ..
+#trash youtube-viewer
+
+# install ponymix (used to control pulseaudio)
+cd ~/Test
+git clone https://github.com/falconindy/ponymix.git
+cd ponymix
+sudo make install
+cd ..
+trash ponymix
+
+# install googler
+cd ~/Test
+git clone https://github.com/jarun/googler.git
+cd googler
+sudo make install
+cd ..
+trash googler
