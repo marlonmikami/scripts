@@ -1,5 +1,14 @@
 #! /bin/bash
 
+#   /$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$$$ /$$$$$$  /$$$$$$ 
+#  /$$__  $$ /$$__  $$| $$$ | $$| $$_____/|_  $$_/ /$$__  $$
+# | $$  \__/| $$  \ $$| $$$$| $$| $$        | $$  | $$  \__/
+# | $$      | $$  | $$| $$ $$ $$| $$$$$     | $$  | $$ /$$$$
+# | $$      | $$  | $$| $$  $$$$| $$__/     | $$  | $$|_  $$
+# | $$    $$| $$  | $$| $$\  $$$| $$        | $$  | $$  \ $$
+# |  $$$$$$/|  $$$$$$/| $$ \  $$| $$       /$$$$$$|  $$$$$$/
+#  \______/  \______/ |__/  \__/|__/      |______/ \______/ 
+
 TERMINAL=urxvt
 
 PROGRAMS="aliases
@@ -9,7 +18,7 @@ compton
 config
 lemonbar
 lemonbar_feed
-nvim
+neovim
 polybar
 sxhkd
 urxvt
@@ -17,7 +26,7 @@ xinitrc
 zathura"
 
 
-case $(echo -e "$PROGRAMS" | dmenu -nb \#000000 -sb \#101010 -fn "$FONT" -b -i -p "Which action to take?") in
+case $(echo -e "$PROGRAMS" | dmenu -nb \#000000 -sb \#101010 -fn "NotoMono Nerd Font Mono" -b -i -p "Which action to take?") in
 
   "aliases")
     $TERMINAL -e nvim $HOME/.bash_aliases
@@ -40,7 +49,7 @@ case $(echo -e "$PROGRAMS" | dmenu -nb \#000000 -sb \#101010 -fn "$FONT" -b -i -
   "lemonbar_feed")
     $TERMINAL -e nvim $HOME/.config/lemonbar/feed
     ;;
-  "nvim")
+  "neovim")
     $TERMINAL -e nvim $HOME/.config/nvim/init.vim
     ;;
   "polybar")
