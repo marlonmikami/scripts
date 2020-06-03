@@ -1,0 +1,11 @@
+# /bin/bash
+
+wget https://managedway.dl.sourceforge.net/project/fbc/Binaries%20-%20Linux/FreeBASIC-1.07.1-linux-x86_64.tar.gz -O $HOME/Test/fb.tar.gz
+
+tar -zxvf $HOME/Test/fb.tar.gz -C $HOME/Test/
+
+sudo $HOME/Test/FreeBASIC-1.07.1-linux-x86_64/install.sh -i
+
+rm -r $HOME/Test/FreeBASIC-1.07.1-linux-x86_64
+rm -r $HOME/Test/fb.tar.gz
+

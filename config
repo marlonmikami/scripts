@@ -21,8 +21,9 @@ lemonbar_feed
 neovim
 polybar
 sxhkd
-urxvt
 xinitrc
+xdefaults
+xresources
 zathura"
 
 
@@ -63,6 +64,12 @@ case $(echo -e "$PROGRAMS" | dmenu -nb \#000000 -sb \#101010 -fn "NotoMono Nerd 
     ;;
   "xinitrc")
     $TERMINAL -e nvim $HOME/.xinitrc
+    ;;
+  "xdefaults")
+    $TERMINAL -e nvim $HOME/.Xdefaults
+    ;;
+  "xresources")
+    $TERMINAL -e nvim $HOME/.Xresources
     ;;
   "zathura")
     $TERMINAL -e nvim $HOME/.config/zathura/zathurarc
