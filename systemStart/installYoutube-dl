@@ -2,5 +2,5 @@
 
 # install youtube-dl
 mkdir -p $HOME/.local/bin
-wget https://yt-dl.org/downloads/latest/youtube-dl -O $HOME/.local/bin/youtube-dl
-chmod +x $HOME/.local/bin/youtube-dl
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o $HOME/.local/bin/youtube-dl
+sudo chmod a+rx $HOME/.local/bin/youtube-dl

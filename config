@@ -21,13 +21,13 @@ lemonbar_feed
 neovim
 polybar
 sxhkd
-xinitrc
 xdefaults
+xinitrc
 xresources
 zathura"
 
 
-case $(echo -e "$PROGRAMS" | dmenu -nb \#000000 -sb \#101010 -fn "NotoMono Nerd Font Mono" -b -i -p "Which action to take?") in
+case $(echo -e "$PROGRAMS" | dmenu -nb \#000000 -sb \#101010 -fn "NotoMono Nerd Font Mono" -b -i -p "What to configure?") in
 
   "aliases")
     $TERMINAL -e nvim $HOME/.bash_aliases

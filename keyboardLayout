@@ -1,0 +1,19 @@
+#! /bin/bash
+
+BCOLOR=\#000000
+SCOLOR=\#101010
+FONT="NotoMono Nerd Font Mono"
+
+PROMPT="Which keyboard layout do you want to use?"
+OPTIONS="Us\nInternational"
+
+CHOICE=$(echo -e "$OPTIONS" | dmenu -nb $BCOLOR -sb $SCOLOR -fn "$FONT" -b -i -p "$PROMPT")
+
+case $( echo $CHOICE ) in
+  "Us")
+    setxkbmap us
+    ;;
+  "International")
+    setxkbmap -layout us -variant intl
+    ;;
+esac

@@ -3,18 +3,18 @@
 mkdir -p ~/.local/bin
 mkdir Test
 
-#sudo apt-get install -y build-essential calcurse chocolate-doom cmatrix compton dmenu dtrx feh firefox-esr gawk groff leafpad libpulse-dev make ncdu neovim pulseaudio ranger rxvt-unicode-256color stow sxiv trash-cli ttf-mscorefonts-installer tty-clock xorg zathura zathura-djvu zathura-pdf-poppler
+sudo apt-get install -y build-essential calcurse chocolate-doom cmatrix compton dmenu dtrx exfat-fuse exfat-utils feh ffmpeg firefox-esr galculator gawk groff libpulse-dev make ncdu neovim ntfs-3g pulseaudio ranger rxvt-unicode-256color stow sxiv trash-cli tty-clock vlc xorg zathura zathura-djvu zathura-pdf-poppler
 
 # install trans (translator)
-cd ~/.local/bin/
-wget git.io/trans
-chmod +x ./trans
+#cd ~/.local/bin/
+#wget git.io/trans
+#chmod +x ./trans
  
 # install gotop
-./installGotop
+#./installGotop
 
 # install youtube-dl
-./installYoutube-dl
+#./installYoutube-dl
 
 # install polybar
 #cd ~/Test
@@ -41,17 +41,17 @@ chmod +x ./trans
 #trash youtube-viewer
 
 # install ponymix (used to control pulseaudio)
-cd ~/Test
-git clone https://github.com/falconindy/ponymix.git
-cd ponymix
-sudo make install
-cd ..
-trash ponymix
+#cd ~/Test
+#git clone https://github.com/falconindy/ponymix.git
+#cd ponymix
+#sudo make install
+#cd ..
+#trash ponymix
 
 # install googler
-cd ~/Test
-git clone https://github.com/jarun/googler.git
-cd googler
-sudo make install
-cd ..
-trash googler
+#cd ~/Test
+#git clone https://github.com/jarun/googler.git
+#cd googler
+#sudo make install
+#cd ..
+#trash googler

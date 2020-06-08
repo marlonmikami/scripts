@@ -1,0 +1,10 @@
+https://github.com/yshui/picom.git
+sudo apt install git neovim stow meson ninja-build cmake libev-dev libxcb-render-util0-dev libxcb-image0-dev libpixman-1-dev libxcb-damage0-dev libxcb-composite0-dev uthash-dev
+
+
+
+meson --buildtype=release . build
+ninja -C build
+
+
+

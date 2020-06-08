@@ -1,0 +1,5 @@
+#! /bin/bash
+mkdir -p $HOME/.local/src
+mkdir -p $HOME/.local/bin
+git clone https://github.com/falconindy/ponymix.git $HOME/.local/src/ponymix
+sudo make -C $HOME/.local/src/ponymix install

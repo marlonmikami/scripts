@@ -1,0 +1,7 @@
+#! /bin/bash
+mkdir -p $HOME/.local/src
+mkdir -p $HOME/.local/bin
+sudo apt install -y libxcomposite-dev libxdamage-dev libxrandr-dev libxinerama-dev libconfig-dev libdbus-1-dev libgl1-mesa-dev
+git clone https://github.com/tryone144/compton.git $HOME/.local/src/compton
+make -C $HOME/.local/src/compton
+ln -s $HOME/.local/src/compton/compton $HOME/.local/bin/compton

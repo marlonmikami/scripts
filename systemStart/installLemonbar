@@ -1,0 +1,8 @@
+#! /bin/bash
+mkdir -p $HOME/.local/src
+mkdir -p $HOME/.local/bin
+sudo apt install libxcb1-dev libxcb-randr0-dev libxft-dev libx11-xcb-dev libxcb-xinerama0-dev
+git clone http://github.com/marlonmikami/bar $HOME/.local/src/lemonbar
+make -C $HOME/.local/src/lemonbar
+ln -s $HOME/.local/src/lemonbar/lemonbar $HOME/.local/bin/lemonbar
+
