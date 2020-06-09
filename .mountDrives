@@ -1,0 +1,4 @@
+#! /bin/bash
+
+#Mount 1TB hard drive
+sudo mount /dev/sda1 /mnt/hdd1
