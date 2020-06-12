@@ -1,9 +1,25 @@
 #! /bin/bash
 
-mkdir -p ~/.local/bin
-mkdir -p ~/Test
+# Make some useful folders
+mkdir -p $HOME/local/bin
+mkdir -p $HOME/local/src
+mkdir -p $HOME/Test
+mkdir -p $HOME/Pictures
 
-sudo apt-get install -y build-essential calcurse chocolate-doom cmatrix compton dmenu dtrx exfat-fuse exfat-utils feh ffmpeg firefox-esr galculator gawk groff libpulse-dev linux-headers-$(uname -r) make ncdu neovim ntfs-3g pulseaudio ranger rxvt-unicode-256color stow sxiv trash-cli tty-clock vlc xorg zathura zathura-djvu zathura-pdf-poppler
+# Install all the basic stuff
+sudo apt-get install -y build-essential calcurse chocolate-doom cmatrix compton dmenu dtrx exfat-fuse exfat-utils feh ffmpeg firefox-esr galculator gawk groff libpulse-dev linux-headers-$(uname -r) make ncdu neovim ntfs-3g pulseaudio ranger rxvt-unicode-256color stow sxhkd sxiv trash-cli tty-clock vlc xorg zathura zathura-djvu zathura-pdf-poppler
+
+# To get the video drivers working
+sudo apt-get install firmware-linux-nonfree libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all
+sudo dpkg --add-architecture i386 && sudo apt update
+sudo apt-get install libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
+
+# Add these lines to /etc/apt/sources.list
+sudo echo -e "\ndeb http://deb.devuan.org/merged beowulf main contrib non-free" >> "/etc/apt/sources.list"
+sudo echo "deb http://deb.devuan.org/merged beowulf-security main contrib non-free" >> "/etc/apt/sources.list"
+
+sudo apt install firmware-amd-graphics 
+
 
 # install trans (translator)
 #cd ~/.local/bin/
