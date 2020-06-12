@@ -1,0 +1,38 @@
+#! /bin/bash
+
+#curl "https://www.youtube.com/user/Gabriella9797/videos?view=0&sort=dd&shelf_id=0&pbj=1" > tmp_file
+
+# Find the channel files
+FILEPATH="$HOME/.config/youtubeScraper/channels/"
+FILES=$( ls $FILEPATH )
+
+# Choose the channel file
+FILE=$(echo "$FILES" | dmenu -l 50)
+
+# This lists the titles
+TITLES=$(cat "$FILEPATH""$FILE" | grep "description-id" | sed -e "s/.*title=\"//g" | cut -d'"' -f1 | head)
+
+# This lists the urls
+URLS=$(cat "$FILEPATH""$FILE" | grep "description-id" | sed -e "s/.*href=\"//g" | cut -d'"' -f1 | head)
+
+# Choose the video
+CHOICE=$(echo "$TITLES" | dmenu -i -l 10)
+
+COUNT=0
+INDEX=0
+
+# Get the index of the line with the description
+while IFS= read -r line
+do
+  let "COUNT+=1"
+  if [ "$CHOICE" == "$line" ]
+  then
+    INDEX="$COUNT"
+  fi
+done <<< "$TITLES"
+
+# Get the same line, on the URLS string, and fix the url
+URL="https://www.youtube.com"$(echo "$URLS" | sed -n "$INDEX p")
+
+# Opens it on the browser
+vlc "$URL"

@@ -1,0 +1,4 @@
+#! /bin/bash
+
+[ $GAPSIZE -eq 0 ] && export GAPSIZE=30 || export GAPSIZE=0
+bspc config window_gap $GAPSIZE 

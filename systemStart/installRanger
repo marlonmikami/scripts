@@ -1,0 +1,10 @@
+#! /bin/bash
+
+# Download and install ranger
+mkdir -p $HOME/.local/src
+git clone https://github.com/ranger/ranger.git $HOME/.local/src/ranger
+sudo make install -C $HOME/.local/src/ranger 
+
+# Get the Ranger Devicons plugin
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf

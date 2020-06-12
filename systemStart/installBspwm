@@ -1,6 +1,8 @@
 #! /bin/bash
+mkdir -p $HOME/.local/src
 sudo apt-get install xcb libxcb-keysyms1-dev libxcb-icccm4-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-shape0-dev
 git clone https://github.com/baskerville/bspwm.git $HOME/.local/src/bspwm
 make -C $HOME/.local/src/bspwm
-ln -s $HOME/.local/src/bspwm/bspwm $HOME/.local/bin/bspwm
-ln -s $HOME/.local/src/bspwm/bspc $HOME/.local/bin/bspc
+sudo make install -C $HOME/.local/src/bspwm
+#ln -s $HOME/.local/src/bspwm/bspwm $HOME/.local/bin/bspwm
+#ln -s $HOME/.local/src/bspwm/bspc $HOME/.local/bin/bspc
