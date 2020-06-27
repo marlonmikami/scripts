@@ -1,4 +1,4 @@
 #! /bin/sh
 FILENAME=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13)
 FILENAME=$FILENAME".png"
-import -window root $HOME/Pictures/$FILENAME
+import -window root $HOME/Pictures/Screenshots/$FILENAME

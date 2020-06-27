@@ -1,0 +1,15 @@
+#! /bin/bash
+
+CHOICE=$( echo -e 'Minimum\nMedium\nMaximum' | $DM -p "Brightness setting" )
+
+case $(echo $CHOICE) in
+  "Minimum")
+    redshift -x && redshift -o -l 25.15:50.07 manual -b 0.5
+    ;;
+  "Medium")
+    redshift -x && redshift -o -l 25.15:50.07 manual -b 0.8
+    ;;
+  "Maximum")
+    redshift -x
+    ;;
+esac

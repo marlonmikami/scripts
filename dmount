@@ -1,0 +1,6 @@
+#! /bin/bash
+labels=$(lsblk -lp | grep "part $" | awk '{print $1, "(" $4 ")" }')
+choice=$(echo "$labels" | $DM)
+choice=$(echo "$choice" | cut -d " " -f1)
+path=$(ls /mnt/ | $DM)
+sudo mount "$choice" "/mnt/$path"

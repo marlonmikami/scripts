@@ -1,0 +1,14 @@
+#!/bin/sh
+# dmenu_run improved
+# if a command ends with "!", it is started in term.
+
+termcmd="urxvt -e"
+test -s $HOME/.dmenurc && . $HOME/.dmenurc
+
+cmd="$(dmenu_path | dmenu $@ -x 4 -y 5 -w 1907)"
+case $cmd in
+    *\! ) ${termcmd} "$(printf "%s" "${cmd}" | cut -d'!' -f1)";;
+    * ) ${cmd} ;;
+esac
+exit
+

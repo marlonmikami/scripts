@@ -7,7 +7,7 @@ FILEPATH="$HOME/.config/youtubeScraper/channels/"
 FILES=$( ls $FILEPATH )
 
 # Choose the channel file
-FILE=$(echo "$FILES" | dmenu -l 50)
+FILE=$(echo "$FILES" | $DM -l 50)
 
 # This lists the titles
 TITLES=$(cat "$FILEPATH""$FILE" | grep "description-id" | sed -e "s/.*title=\"//g" | cut -d'"' -f1 | head)
@@ -16,7 +16,7 @@ TITLES=$(cat "$FILEPATH""$FILE" | grep "description-id" | sed -e "s/.*title=\"//
 URLS=$(cat "$FILEPATH""$FILE" | grep "description-id" | sed -e "s/.*href=\"//g" | cut -d'"' -f1 | head)
 
 # Choose the video
-CHOICE=$(echo "$TITLES" | dmenu -i -l 10)
+CHOICE=$(echo "$TITLES" | $DM -l 10)
 
 COUNT=0
 INDEX=0
@@ -35,4 +35,4 @@ done <<< "$TITLES"
 URL="https://www.youtube.com"$(echo "$URLS" | sed -n "$INDEX p")
 
 # Opens it on the browser
-vlc "$URL"
+mpv "$URL"

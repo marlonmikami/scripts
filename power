@@ -1,8 +1,6 @@
 #! /bin/bash
 
-#[ $(echo -e "Power Off\nReboot\nLog Off" | dmenu -nb \#000000 -sb \#101010 -fn "$FONT" -b -i -p "Which action to take?")]
-
-case $(echo -e "Power Off\nReboot\nLog Off" | dmenu -i -p "Which action to take?") in
+case $(echo -e "Power Off\nReboot\nLog Off" | $DM -p "Action to take:") in
   "Power Off")
     sh $HOME/.scripts/poweroff
     ;;

@@ -1,21 +1,21 @@
 #! /bin/bash
 
 #Chose the bookmark file
-FILES=$( ls $HOME/Bookmarks )
-FILE=$( echo -e "ALL\n""$FILES" | dmenu -i )
+FILES=$( ls $HOME/Documents/Bookmarks )
+FILE=$( echo -e "ALL\n""$FILES" | $DM -p "Bookmark categories:" )
 
 #If an option was chosen
 if [[ ! -z "$FILE" ]]
 then
   #Read the file
   #If is ALL, concatenate all of them
-  [ $FILE = "ALL" ] && CONTENT=$( cat $HOME/Bookmarks/* ) || CONTENT=$(cat $HOME/Bookmarks/"$FILE")
+  [ $FILE = "ALL" ] && CONTENT=$( cat $HOME/Documents/Bookmarks/* ) || CONTENT=$(cat $HOME/Documents/Bookmarks/"$FILE")
 
   #Get the titles
   TITLES=$( echo "$CONTENT" | sed '/^http.*/d' | sed '/^$/d' | sed 's/^#//g' | sort )
 
   #Let the person choose the bookmark
-  CHOICE=$( echo "$TITLES" | dmenu -i -l 50 )
+  CHOICE=$( echo "$TITLES" | $DM -l 50 )
 
   #Get the URL right after the title
   URL=$( echo "$CONTENT" | perl -p -e "s/#$CHOICE\n/---/" | grep '^---.*' | cut -c 4- )

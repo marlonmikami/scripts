@@ -1,0 +1,36 @@
+#! /bin/bash
+
+options="Bookmark Manager
+Brightness Control
+Configure
+Keyboard Layout
+Mount Device
+Power Menu
+Run
+Youtube Scrapper"
+
+case $(echo "$options" | $DM -l 20) in
+  "Bookmark Manager")
+    bookmarkManager
+    ;;
+  "Brightness Control")
+    brightness
+    ;;
+  "Configure")
+    config
+    ;;
+  "Keyboard Layout")
+    keyboardLayout
+    ;;
+  "Mount Device")
+    dmount
+    ;;
+  "Power Menu")
+    power
+    ;;
+  "Run")
+    dmenu_run_i
+    ;;
+  "Youtube Scrapper")
+    ;;
+  esac

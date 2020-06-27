@@ -1,4 +1,4 @@
 #! /bin/bash
 
 #Mount 1TB hard drive
-sudo mount /dev/sda1 /mnt/hdd1
+sudo mount /dev/sda1 /mnt/hdd1 -o uid=1000 -o gid=1000

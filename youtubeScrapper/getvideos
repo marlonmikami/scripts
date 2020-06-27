@@ -1,0 +1,42 @@
+#! /bin/bash
+channelspath="$1"  # Path to the channel file
+filename="$2"      # Name of the file to read
+tmppath="$3/tmp"   # File where the html is downloaded to
+name="$4"          # Name of the channel
+url="$5"           # Url to download the html from
+
+# Download the html and save on to the file
+#curl "$url" > "$tmppath"
+
+# Get the content of the file
+content=$(cat "$tmppath")
+
+# --- --- --- method 1 --- --- ---
+# This gets the video titles
+#titles=$( echo "$content" | grep "description-id" | sed -e "s/.*title=\"//g" | cut -d'"' -f1 | head)
+#echo "$titles"
+
+# This gets the video urls
+#urls=$(cat "$tmppath" | grep "description-id" | sed -e "s/.*href=\"//g" | cut -d'"' -f1 | head)
+#echo "$urls"
+
+# --- --- --- method 2 --- --- ---
+# Add the name of the channel and url to the file, remove everything else
+echo "$name" > "$channelspath""/$filename"
+echo "$url" >> "$channelspath""/$filename"
+
+lines=$(echo "$content" | grep '"title":{"accessibility":{"accessibilityData":{"label":"' | sed 's/,"simpleText":"/\n/g' | sed -n "n;p")
+#echo "$lines"
+
+# For each video, add title and url to the file
+index=0
+while IFS= read -r line
+do
+  #echo "$line" | cut -d '"' -f1
+  title=$(echo "$line" | cut -d '"' -f1)
+  echo "$title"
+  #let "index+=1"
+  #currenturl=$(echo "$urls" | sed -n "$index p")
+  #newline="[$line]$currenturl"
+  #echo "$newline" >> "$channelspath""/$filename"
+done <<< "$lines"

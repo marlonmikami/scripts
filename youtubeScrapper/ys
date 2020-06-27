@@ -1,0 +1,35 @@
+#! /bin/bash
+
+# Read the config
+config="$(cat $HOME/.config/youtubeScrapper/ysrc)"
+clistpath=$( echo "$config" | grep "clistpath" | cut -d "=" -f2 )"/clist"
+channelspath=$( echo "$config" | grep "channelspath" | cut -d "=" -f2 )
+tmppath=$( echo "$config" | grep "tmppath" | cut -d "=" -f2 )
+
+# Get a list of the channels
+clist="$(cat $clistpath)"
+
+# Go through every entry and create a file if necessary
+while IFS= read -r line
+do
+  # Get the name between the brackets
+  name=$( echo "$line" | cut -d "[" -f2 | cut -d "]" -f1 )
+  url=$( echo "$line" | cut -d "]" -f2 )
+
+  # Make a file name by hashing the channel name
+  filename=$( echo "$name" | md5sum | cut -d " " -f1)
+
+  # Check if the file already exists
+  if [ ! -f "$channelspath/""$filename" ]
+  then
+    # Create the file
+    touch "$channelspath/""$filename"
+    
+    # Append the name and url of the channel to the file
+    echo "$name" >> "$channelspath/""$filename"
+    echo "$url" >> "$channelspath/""$filename"
+  fi
+
+  # Update the video list on the file
+  ./getvideos "$channelspath" "$filename" "$tmppath" "$name" "$url"
+done <<< "$clist"

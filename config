@@ -27,7 +27,7 @@ xresources
 zathura"
 
 
-case $(echo -e "$PROGRAMS" | dmenu -i -p "What to configure?") in
+case $(echo -e "$PROGRAMS" | $DM -p "What to configure?") in
 
   "aliases")
     $TERMINAL -e nvim $HOME/.bash_aliases

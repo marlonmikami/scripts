@@ -1,9 +1,9 @@
 #! /bin/bash
 
-PROMPT="Which keyboard layout do you want to use?"
+PROMPT="Keyboard layout to use:"
 OPTIONS="Us\nInternational"
 
-CHOICE=$(echo -e "$OPTIONS" | dmenu -i -p "$PROMPT")
+CHOICE=$(echo -e "$OPTIONS" | $DM -p "$PROMPT")
 
 case $( echo $CHOICE ) in
   "Us")
