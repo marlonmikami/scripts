@@ -7,7 +7,7 @@ mkdir -p $HOME/Test
 mkdir -p $HOME/Pictures
 
 # Install all the basic stuff
-sudo apt-get install -y build-essential calcurse chocolate-doom cmatrix compton dmenu dtrx exfat-fuse exfat-utils feh ffmpeg firefox-esr galculator gawk groff libpulse-dev linux-headers-$(uname -r) sensors-detect make ncdu neovim ntfs-3g pulseaudio ranger rxvt-unicode-256color stow sxhkd sxiv trash-cli tty-clock vlc xorg zathura zathura-djvu zathura-pdf-poppler
+sudo apt-get install -y build-essential calcurse chocolate-doom cmatrix compton dmenu dtrx exfat-fuse exfat-utils feh ffmpeg firefox-esr galculator gawk groff hsetroot libpulse-dev linux-headers-$(uname -r) sensors-detect make ncdu neovim ntfs-3g pulseaudio ranger rxvt-unicode-256color stow sxhkd sxiv trash-cli tty-clock vlc xorg zathura zathura-djvu zathura-pdf-poppler
 
 # To get the video drivers working
 sudo apt-get install firmware-linux-nonfree libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all

@@ -1,0 +1,5 @@
+#! /bin/sh
+desktop="Desktop: "$(bspc query -D -d --names)"\n"
+datetime="Date: "$(date +"%d/%m/%y")"\nTime: "$(date +"%H:%M")"\n"
+message="$desktop$datetime"
+pkill dunst && notify-send "Info" "$message" -t 5000 -i "\n"
